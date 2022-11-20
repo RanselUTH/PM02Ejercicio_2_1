@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="PM02Ejercicio2_1"
+             x:Class="PM02Ejercicio_2_1.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Picker x:Name="pckRegion" HorizontalTextAlignment="Center" FontSize="36" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Americas</x:String>
+                        <x:String>Africa</x:String>
+                        <x:String>Asia</x:String>
+                        <x:String>Europe</x:String>
+                        <x:String>Oceania</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Frame>
+        <ListView x:Name="lsvCountries" Margin="20" RowHeight="70" ItemSelected="lsvCountries_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="10">
+                            <Image Source="{Binding Flag}" Margin="10" />
+                            <Label Text="{Binding Name}" FontSize="20" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+
+</ContentPage>
